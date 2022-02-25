@@ -11,8 +11,7 @@ var stackMethods = {};
 
 stackMethods.push = function(value) {
   this.top += 1;
-  var nextKey = this.top;
-  this.storage[nextKey] = value;
+  this.storage[this.top] = value;
 };
 
 stackMethods.pop = function() {
@@ -25,7 +24,7 @@ stackMethods.pop = function() {
 };
 
 stackMethods.size = function() {
-  return Object.keys(this.storage).length;
+  return this.top;
 };
 
 
