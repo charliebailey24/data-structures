@@ -11,15 +11,8 @@ var Queue = function() {
 var queueMethods = {};
 
 queueMethods.enqueue = function(value) {
-
-  for (var key in this.storage) {
-    key = Number(key);
-    if (key > this.tail) {
-      this.tail = key;
-    }
-  }
-  var nextKey = this.tail + 1;
-  this.storage[nextKey] = value;
+  this.tail += 1;
+  this.storage[this.tail] = value;
 };
 
 queueMethods.dequeue = function() {
