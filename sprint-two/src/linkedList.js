@@ -16,10 +16,10 @@ var LinkedList = function() {
     // create a new node
     // add node to list
     // if the current tail is null
-      // add the new node to list
-      // update the list tail reference to the new node (how do I store the new node in list?)
+    // add the new node to list
+    // update the list tail reference to the new node (how do I store the new node in list?)
     // otherwise
-      // adjust the current tails next reference to the new node
+    // adjust the current tails next reference to the new node
 
     var NewNode = Node(value);
     list.value = NewNode;
@@ -47,13 +47,18 @@ var LinkedList = function() {
   };
 
   list.contains = function(target, node) {
+    // log the node
+    // {value: 5, next: null} what should this look like?
+    console.log('node: ', node);
+    console.log('list head: ', list.head);
+    console.log('list tail: ', list.tail);
     if (node === undefined) {
       node = list.head;
     }
     if (node.value === target) {
       return true;
     }
-    if (node.value === null) {
+    if (node.next === null) {
       return false;
     }
     return list.contains(target, node.next);
@@ -74,4 +79,5 @@ var Node = function(value) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+
  */
